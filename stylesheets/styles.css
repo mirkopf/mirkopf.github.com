@@ -212,3 +212,11 @@ footer {
 #title_portfolio {
   font-size: 24px;
 }
+
+div.post {
+  margin: 20px 0;
+}
+
+div.post img {
+  margin-bottom: 10px;
+}
