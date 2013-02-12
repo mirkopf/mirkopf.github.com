@@ -15,15 +15,11 @@
     <div class="wrapper">
       <header>
         <h1 id="title_portfolio">Miriam Martinez</h1>
-        <p>Portfolio</p>
-        <p class="view"><a href="https://github.com/mirkopf">View My GitHub Profile</a></p>
+        <h3><a href="{{site.url}}">Sobre mí</a></h3>
         
-        <ul>
         {% for category in site.categories %}
-          <li><a href="categories/{{ category | first }}/index.html">{{ category | first }}</a></li>
+        <h3><a href="categories/{{ category | first }}/index.html">{{ category | first }}</a></h3>
         {% endfor %}
-        </ul>
-
       </header>
       
       <section>
