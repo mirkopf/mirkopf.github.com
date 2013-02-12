@@ -1,5 +1,5 @@
 permalink: pretty
 paginate: 5
-categorytitle_prefix_: 'Categoría: '
+category_title_prefix: ''
 url: http://miriammartinez.me
 images_url: http://josemdev.com/mirkopf/
