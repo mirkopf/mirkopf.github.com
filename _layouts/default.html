@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Portfolio de Miriam Martinez : {{ page.title }} </title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="{{site.url}}/stylesheets/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,6 +17,12 @@
         <h1 id="title_portfolio">Miriam Martinez</h1>
         <p>Portfolio</p>
         <p class="view"><a href="https://github.com/mirkopf">View My GitHub Profile</a></p>
+        
+        <ul>
+        {% for category in site.categories %}
+          <li><a href="categories/{{ category | first }}/index.html">{{ category | first }}</a></li>
+        {% endfor %}
+        </ul>
 
       </header>
       
