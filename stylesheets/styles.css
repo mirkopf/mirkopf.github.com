@@ -2,8 +2,8 @@
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
+  font:15px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#000;
   font-weight:300;
 }
 
@@ -36,6 +36,10 @@ a {
   color:#39c;
   font-weight:400;
   text-decoration:none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 a small {
@@ -252,4 +256,9 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+
+#title_portfolio {
+  font-size: 24px;
 }
