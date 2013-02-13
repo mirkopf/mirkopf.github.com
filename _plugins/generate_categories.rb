@@ -183,12 +183,43 @@ module Jekyll
     def generate(site)
       site.write_category_indexes
     end
+    
+    def self.nice_slug(str)
+    		accents = { 
+    		  ['Ã¡','Ã ','Ã¢','Ã¤','Ã£'] => 'a',
+    		  ['Ãƒ','Ã„','Ã‚','Ã€','Ã?'] => 'A',
+    		  ['Ã©','Ã¨','Ãª','Ã«'] => 'e',
+    		  ['Ã‹','Ã‰','Ãˆ','ÃŠ'] => 'E',
+    		  ['Ã­','Ã¬','Ã®','Ã¯'] => 'i',
+    		  ['Ã?','ÃŽ','ÃŒ','Ã?'] => 'I',
+    		  ['Ã³','Ã²','Ã´','Ã¶','Ãµ'] => 'o',
+    		  ['Ã•','Ã–','Ã”','Ã’','Ã“'] => 'O',
+    		  ['Ãº','Ã¹','Ã»','Ã¼'] => 'u',
+    		  ['Ãš','Ã›','Ã™','Ãœ'] => 'U',
+    		  ['Ã§'] => 'c', ['Ã‡'] => 'C',
+    		  ['Ã±'] => 'n', ['Ã‘'] => 'N'
+    		  }
+    		accents.each do |ac,rep|
+    		  ac.each do |s|
+    			str = str.gsub(s, rep)
+    		  end
+    		end
+        
+
+
+    		str = str.downcase
+    	end
 
     # Processes the given dir and removes leading and trailing slashes. Falls
     # back on the default if no dir is provided.
     def self.category_dir(base_dir, category)
       base_dir = (base_dir || CATEGORY_DIR).gsub(/^\/*(.*)\/*$/, '\1')
-      category = category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
+      category = category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-')
+      category.gsub!(/ñ/, 'n')
+      category.gsub!(/ó/, 'o')
+      category.gsub!(/á/, 'a')
+      
+      category = GenerateCategories.nice_slug(category)
       File.join(base_dir, category)
     end
 

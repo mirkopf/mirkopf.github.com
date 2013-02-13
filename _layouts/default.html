@@ -29,12 +29,12 @@
         
         {% for category in site.categories %}
           {% if category[0] == "Diseños Libres" %}
-            <h3><a href="categories/diseños-libres/index.html">{{ category | first }}</a></h3>
+            <h3><a href="/categories/disenos-libres/index.html">{{ category | first }}</a></h3>
           {% else  %}
             {% if category[0] == "Campañas Display" %}
-              <h3><a href="categories/campañas-display/index.html">{{ category | first }}</a></h3>
+              <h3><a href="/categories/campanas-display/index.html">{{ category | first }}</a></h3>
             {% else %}
-              <h3><a href="categories/{{ category | first }}/index.html">{{ category | first }}</a></h3>
+              <h3><a href="/categories/{{ category | first | downcase }}/index.html">{{ category | first }}</a></h3>
             {% endif %}
           {% endif %}
         {% endfor %}
