@@ -30,6 +30,8 @@
         {% for category in site.categories %}
           {% if category[0] == "Diseños Libres" %}
             <h3><a href="categories/diseños-libres/index.html">{{ category | first }}</a></h3>
+          {% else if category[0] == "Campañas Display" %}
+            <h3><a href="categories/campañas-display/index.html">{{ category | first }}</a></h3>
           {% else %}
             <h3><a href="categories/{{ category | first }}/index.html">{{ category | first }}</a></h3>
           {% endif %}
@@ -52,7 +54,7 @@
 
     $(window).load(function() {
 
-        $('#slider').nivoSlider({
+        $('.nivoSlider').nivoSlider({
           effect: 'fade',
           prevText: 'Siguiente', // Prev directionNav text
           nextText: 'Anterior', // Next directionNav text
