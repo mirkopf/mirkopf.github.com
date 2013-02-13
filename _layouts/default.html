@@ -28,8 +28,8 @@
         <h3><a href="{{site.url}}">Sobre mí</a></h3>
         
         {% for category in site.categories %}
-          {% if category[0] == "Diseño Libre" %}
-            <h3><a href="categories/diseño-libre/index.html">{{ category | first }}</a></h3>
+          {% if category[0] == "Diseños Libres" %}
+            <h3><a href="categories/diseños-libres/index.html">{{ category | first }}</a></h3>
           {% else %}
             <h3><a href="categories/{{ category | first }}/index.html">{{ category | first }}</a></h3>
           {% endif %}
